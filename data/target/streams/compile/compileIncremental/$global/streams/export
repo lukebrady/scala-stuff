@@ -1,1 +1,0 @@
-scalac -bootclasspath /Users/ltbrady/.sbt/boot/scala-2.12.7/lib/scala-library.jar -classpath /Users/ltbrady/Desktop/Software/Scala/data/target/scala-2.12/classes /Users/ltbrady/Desktop/Software/Scala/data/structures.scala
