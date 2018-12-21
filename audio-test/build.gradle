@@ -1,0 +1,13 @@
+apply plugin: 'scala'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+  compile 'org.scala-lang:scala-library:2.11.6'
+  compile 'com.google.cloud:google-cloud-speech:0.32.0-alpha'
+  // Your other deps here
+}
+compileJava.options.fork = true
+compileJava.options.forkOptions.executable = "/Library/Java/JavaVirtualMachines/jdk1.8.0_161.jdk/Contents/Home/bin/"
