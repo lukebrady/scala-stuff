@@ -1,3 +1,5 @@
+package pokemontest
+
 import java.io._
 import java.util.HashMap
 
