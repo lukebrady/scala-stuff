@@ -44,11 +44,13 @@ object PokeSerializer {
 }
 
 object StructureTest extends App {
-    val pikachu : Pokemon = new Pokemon("Pikachu", "Electric", 5)
-    PokeSerializer.seralizePokemon(pikachu)
-    val pokemon = PokeSerializer.deseralizePokemon("pikachu")
-    val json = pokemon.toJSON
-    val hash = pokemon.toHashMap
-    println(hash)
-    println(json)
+    val poke1 : Pokemon = new Pokemon("Pikachu", "Electric", 5)
+    val poke2 : Pokemon = new Pokemon("Charmander", "Fire", 5)
+    val poke3 : Pokemon = new Pokemon("Bulbasour", "Plant", 5)
+    val poke4 : Pokemon = new Pokemon("Squirtle", "Water", 5)
+    val pokeArr : Array[Pokemon] = Array(poke1,poke2,poke3,poke4)
+    // Serialze all pokemon to disk.
+    pokeArr.foreach{
+        pokemon => PokeSerializer.seralizePokemon(pokemon) 
+    }
 }
