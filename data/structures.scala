@@ -1,14 +1,5 @@
 import java.io._
 import java.util.HashMap
-// Messing around with classes and objects in Scala.
-class Account(var username: String, var password: String) {
-    def printUser = {
-        println(username)
-    }
-    def printPassword = {
-        println(password)
-    }
-}
 
 @SerialVersionUID(1234L)
 class Pokemon(var name: String, var ptype: String, var level: Int) 
@@ -30,20 +21,20 @@ extends Serializable {
 object PokeSerializer {
     // Serialize a Pokemon to disk.
     def seralizePokemon(obj: Pokemon) = {
-        val objOutput = new ObjectOutputStream(new FileOutputStream(f"./data/pokemon/${obj.name}%s"))
+        val objOutput = new ObjectOutputStream(new FileOutputStream(f"./pokemon/${obj.name}%s"))
         objOutput.writeObject(obj)
         objOutput.close
     }
     // Deserialize a Pokemon from disk.
     def deseralizePokemon(name: String) : Pokemon = {
-        val objInput = new ObjectInputStream(new FileInputStream(f"./data/pokemon/$name%s"))
+        val objInput = new ObjectInputStream(new FileInputStream(f"./pokemon/$name%s"))
         val pokemon = objInput.readObject.asInstanceOf[Pokemon]
         objInput.close
         return pokemon
     }
 }
 
-object StructureTest extends App {
+object Main extends App {
     val poke1 : Pokemon = new Pokemon("Pikachu", "Electric", 5)
     val poke2 : Pokemon = new Pokemon("Charmander", "Fire", 5)
     val poke3 : Pokemon = new Pokemon("Bulbasour", "Plant", 5)
