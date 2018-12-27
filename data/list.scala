@@ -1,20 +1,30 @@
-class ItemNode {
-    var next : ItemNode = null
-    var itemID: Int = null
-    var itemName: String = null
-    var weapon : Boolean = false
-    var food : Boolean = false
-    var potion : Boolean = false
-}
-
 object InventoryList {
+    var root = new RootNode
+    var maxLength = 25
+    var currentLength = 0
+    var currentSlot = 0
+
     // Print our current item to the screen.
     def getCurrentItem = {
+        var current = root
+        if (current.nextItem != null) {
+        } else {
+            println("Your inventory is empty.")
+        }
+    }
+    // Get and return the next item.
+    def getNextItem = {
 
+    }
+
+    protected class RootNode {var nextItem: ItemNode = null}
+    protected class ItemNode(var nextItem: ItemNode, var itemID: Int, var itemName: String, 
+        var weapon: Boolean, var food: Boolean, var potion: Boolean) {
     }
 }
 
 
 object Main extends App {
-
+    var inventory = InventoryList
+    inventory.getCurrentItem
 }
